@@ -1,0 +1,17 @@
+nombre;descripcion;precioi3;tagBadge;claseBadge;claseImg;contenedorId
+POLLO PREINICIO INICIO EL MORICHAL 40KG;Alimento para el crecimiento y desarrollo de pollos de engorde en su etapa inicial, 22% de Proteinas, suministrar desde la recepción hasta el día 7;50.05;Alimentos;badge-info;ppimor.png;grid-avicola
+POLLO INICIO EL MORICHAL 40KG;;44.75;Alimentos;badge-info;pimor.png;grid-avicola
+POLLO ENGORDE EL MORICHAL 40KG;;44.06;Alimentos;badge-info;pemor.png;grid-avicola
+POLLO INICIO ALIPA 40KG;;47.83;Alimentos;badge-info;piali.png;grid-avicola
+POLLO ENGORDE ALIPA 40KG;;44.42;Alimentos;badge-info;peali.png;grid-avicola
+POLLO INICIADOR PURO LOMO 40KG;;55.39;Alimentos;badge-info;pipl.png;grid-avicola
+POLLO ENGORDE PUROLOMO 40KG;;52.48;Alimentos;badge-info;pepl.png;grid-avicola
+CERDO INICIO ALIPA 40KG;;47.83;Alimentos;badge-info;ciali.png;grid-alimentos-produccion
+CERDO DESARROLLO ALIPA 40KG;;43.77;Alimentos;badge-info;cdali.png;grid-alimentos-produccion
+CERDO INICIO MORICHAL 40KG;;45.25;Alimentos;badge-info;cimor.png;grid-alimentos-produccion
+CERDO DESARROLLO EL MORICHAL 40KG;;43.81;Alimentos;badge-info;cdmor.png;grid-alimentos-produccion
+CERDO ENGORDE EL MORICHAL 40KG;;42.41;Alimentos;badge-info;cemor.png;grid-alimentos-produccion
+OXITETRACICLINA 5% 100ML LABRIN;Antibiótico inyectable de amplio espectro para bovinos, equinos, porcinos y caprinos.;13.85;Antibióticos;badge-danger;oxi5100lab.png;grid-antibioticos-grandes
+GLIFOREX LT;Glifosato al 41% para control de malezas.;12.17;Agroquímicos;badge-success;gliforexlt.png;grid-agro
+MINERFUN MX 500ML;Potente complejo vitamínico y reconstituyente mineral.;120.00;Vitaminas;badge-danger;minerfmx.png;grid-vitaminas-grandes
+ABSORBINE GEL 360GRS;Gel linimento analgésico y antiinflamatorio para alivio muscular.;25.00;Analgésicos;badge-danger;absorbine3oz.png;grid-antiinflamatorios-grandes

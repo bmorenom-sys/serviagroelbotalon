@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Digital | Servi Agro El Botalón C.A.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header-flex">
+            <div class="logo">
+                <h1>Servi Agro <span>El Botalón C.A.</span></h1>
+                <h2>Catálogo Digital de Productos</h2>
+            </div>
+            <nav class="nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#tips">Tips de Cría</a>
+                <a href="index.html#noticias">Noticias</a>
+                <a href="catalogo.html" class="active" style="color: #f08c2f;">Catálogo Digital</a>
+                <a href="index.html#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="productos" class="catalog-section">
+        <div class="container">
+            <div class="section-title">
+                <h3>Inventario Disponible</h3>
+                <p>Explora nuestras soluciones. Consulta disponibilidad y precios en tiempo real vía WhatsApp.</p>
+            </div>
+
+            <!-- BUSCADOR -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="search-input" placeholder="¿Qué producto, medicina o insumo estás buscando?">
+                    <button id="clear-search" class="clear-btn" style="display: none;"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+
+            <!-- RUBROS (Los divs donde productos.js inyectará los items) -->
+            <div class="rubro-block">
+                <div class="rubro-header rubro-grandes">
+                    <h4><i class="fas fa-cow"></i> Grandes Animales</h4>
+                </div>
+                <div class="subcategory-title"><h5><i class="fas fa-syringe"></i> Vitaminas y Reconstituyentes</h5></div>
+                <div class="products-grid" id="grid-vitaminas-grandes"></div>
+
+                <div class="subcategory-title"><h5><i class="fas fa-capsules"></i> Antibióticos de Amplio Espectro</h5></div>
+                <div class="products-grid" id="grid-antibioticos-grandes"></div>
+
+                <div class="subcategory-title"><h5><i class="fas fa-kit-medical"></i> Antiinflamatorios y Analgésicos</h5></div>
+                <div class="products-grid" id="grid-antiinflamatorios-grandes"></div>
+            </div>
+
+            <div class="rubro-block">
+                <div class="rubro-header rubro-pequenos">
+                    <h4><i class="fas fa-dog"></i> Pequeños Animales</h4>
+                </div>
+                <div class="subcategory-title"><h5><i class="fas fa-pills"></i> Vitaminas, Antibióticos y Fármacos</h5></div>
+                <div class="products-grid" id="grid-farmacos-mascotas"></div>
+
+                <div class="subcategory-title"><h5><i class="fas fa-bone"></i> Accesorios y Confort</h5></div>
+                <div class="products-grid" id="grid-accesorios-mascotas"></div>
+            </div>
+
+            <div class="rubro-block">
+                <div class="rubro-header rubro-alimentos">
+                    <h4><i class="fas fa-sack-wheat"></i> Alimentos Concentrados</h4>
+                </div>
+                <div class="subcategory-title"><h5><i class="fas fa-cow"></i> Nutrición para Ganadería y Porcinos</h5></div>
+                <div class="products-grid" id="grid-alimentos-produccion"></div>
+
+                <div class="subcategory-title"><h5><i class="fas fa-dog"></i> Nutrición para Mascotas</h5></div>
+                <div class="products-grid" id="grid-alimentos-mascotas"></div>
+            </div>
+
+            <div class="rubro-block">
+                <div class="rubro-header rubro-avicola">
+                    <h4><i class="fas fa-egg"></i> Línea Avícola y Cría</h4>
+                </div>
+                <div class="subcategory-title"><h5><i class="fas fa-kiwi-bird"></i> Pollitos BB y Alimento Iniciador</h5></div>
+                <div class="products-grid" id="grid-avicola"></div>
+            </div>
+
+            <div class="rubro-block">
+                <div class="rubro-header rubro-agro">
+                    <h4><i class="fas fa-tractor"></i> Productos e Insumos Agrícolas</h4>
+                </div>
+                <div class="subcategory-title"><h5><i class="fas fa-seedling"></i> Agroquímicos y Defensivos</h5></div>
+                <div class="products-grid" id="grid-agro"></div>
+
+                <div class="subcategory-title"><h5><i class="fas fa-wheat-awn"></i> Insumos Agrícolas</h5></div>
+                <div class="products-grid" id="grid-insumos"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL PARA AGRANDAR IMAGEN -->
+    <div id="image-modal" class="modal">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Vista ampliada">
+        <div id="modal-caption"></div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 <strong>Servi Agro El Botalón C.A.</strong> - Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/584121198804?text=Hola!%20Vengo%20del%20catálogo%20y%20deseo%20consultar." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- CARGA DE SCRIPTS EXCLUSIVA PARA EL CATÁLOGO -->
+    <script src="productos.js"></script>
+</body>
+</html>

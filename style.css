@@ -1,0 +1,957 @@
+/* CONFIGURACIÓN GENERAL Y FUENTES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #ebf1eb;
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ENCABEZADO (NAVBAR) */
+.header {
+    background-color: #150101;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.6rem;
+    color: #6ae0af;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+.logo h1 span {
+    color: #f08c2f;
+    font-weight: 700;
+}
+.logo h2 {
+    font-size: 1rem;
+    color: #455d53;
+    font-weight: 400;
+    letter-spacing: -0.25px;
+}
+.nav a {
+    color: #7c9d97;
+    text-decoration: none;
+    margin-left: 1.8rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: #1b4332;
+}
+
+/* SECCIÓN HERO (FONDO: CAMPO CON GANADO VACUNO) */
+.hero {
+    background: linear-gradient(rgba(27, 67, 50, 0.75), rgba(0, 0, 0, 0.45)),
+        url('img/fondo.png') no-repeat center center/cover;;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    color: #f6c4c4;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    text-align: center;    /* Centra el título y el párrafo */
+    max-width: 800px;      /* Controla el ancho máximo del texto */
+    margin: 0 auto;        /* Centra todo el bloque de contenido en la pantalla */
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Alinea el botón justo en el centro del eje vertical */
+    justify-content: center;
+
+}
+
+.hero-content h2 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    color: #f2f9f6;
+}
+
+/* BOTÓN LLAMATIVO */
+.btn-primary {
+    display: inline-block;
+    background-color: #d67d2a;
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(214, 125, 42, 0.4);
+    transition: all 0.3s ease;
+    border-bottom: 3px solid #b0621a;
+}
+
+.btn-primary i {
+    margin-left: 8px;
+    transition: transform 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e58d3b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(214, 125, 42, 0.6);
+}
+
+.btn-primary:hover i {
+    transform: translateX(4px);
+}
+
+/* SECCIÓN PRODUCTOS CON TARJETAS VISUALES LLAMATIVAS */
+.products-section {
+    padding: 6rem 0;
+    background-color: #f0f4f1;
+    background-image: radial-gradient(#d8e2dc 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title h3 {
+    font-size: 2.5rem;
+    color: #1b4332;
+    margin-bottom: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #d67d2a;
+    margin: 10px auto 0 auto;
+    border-radius: 2px;
+}
+
+.section-title p {
+    color: #52615c;
+    font-size: 1.1rem;
+}
+
+/* REJILLA DE TARJETAS CON IMÁGENES ESPECÍFICAS */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+}
+
+.card {
+    position: relative;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-medicina {
+    background: url('https://images.unsplash.com/photo-1581888227599-779811939961?q=80&w=600&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.card-alimento {
+    background: url('https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=600&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.card-agroquimicos {
+    background: url('https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?q=80&w=600&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.card-accesorios {
+    background: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=600&auto=format&fit=crop') no-repeat center center/cover;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(11, 29, 22, 0.95) 40%, rgba(27, 67, 50, 0.4));
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.card-info {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    color: #ffffff;
+    width: 100%;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    color: #d67d2a;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    opacity: 0.9;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(27, 67, 50, 0.3);
+}
+
+.card:hover .card-overlay {
+    background: linear-gradient(to top, rgba(214, 125, 42, 0.95) 50%, rgba(27, 67, 50, 0.3));
+}
+
+.card:hover .card-icon {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+/* SECCIÓN VALORES (NUEVA) */
+.features-section {
+    padding: 5rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    text-align: center;
+}
+
+.feature-item {
+    background: #fff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+    border-top: 4px solid #1b4332;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #1b4332;
+    margin-bottom: 1.5rem;
+}
+
+.feature-item h5 {
+    font-size: 1.4rem;
+    color: #1b4332;
+    margin-bottom: 1rem;
+}
+
+.feature-item p {
+    color: #616161;
+    font-size: 0.95rem;
+}
+
+/* SECCIÓN DE CONTACTO EXPANSIBLE (NUEVA) */
+.contact-section {
+    background-color: #1b4332;
+    color: white;
+    padding: 6rem 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 4rem;
+    align-items: center;
+}
+
+.contact-info-panel h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.contact-desc {
+    color: #b3cbb9;
+    margin-bottom: 2.5rem;
+}
+
+.info-link {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-link i {
+    font-size: 1.8rem;
+    color: #d67d2a;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-link h6 {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+
+.info-link p {
+    color: #d1e2d3;
+}
+
+/* PANEL DE FORMULARIO ESTILIZADO */
+.contact-form-panel {
+    background: #ffffff;
+    color: #333;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form-panel h4 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #1b4332;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #4a5568;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #1b4332;
+}
+
+.btn-submit {
+    width: 100%;
+    background: #1b4332;
+    color: white;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #2d6a4f;
+}
+
+/* PIE DE PÁGINA */
+.footer {
+    background: linear-gradient(rgba(11, 29, 22, 0.94), rgba(11, 29, 22, 0.98)),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1000&auto=format&fit=crop') no-repeat center center/cover;
+    color: #e2e8f0;
+    padding: 5rem 0 2rem 0;
+    text-align: center;
+    border-top: 6px solid #d67d2a;
+}
+
+.footer-quote {
+    max-width: 750px;
+    margin: 0 auto 3rem auto;
+    position: relative;
+}
+
+.quote-icon {
+    font-size: 2rem;
+    color: #d67d2a;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.footer-quote .quote {
+    font-style: italic;
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.footer-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.8rem;
+    font-size: 0.95rem;
+    color: #a0aec0;
+}
+
+.footer-info strong {
+    color: #ffffff;
+}
+
+/* BOTÓN FLOTANTE DE WHATSAPP */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: white;
+    padding: 0 20px;
+    height: 60px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.whatsapp-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* DISEÑO RESPONSIVO */
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    .nav a {
+        margin: 0 0.8rem;
+    }
+
+    .hero {
+        height: 65vh;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .section-title h3 {
+        font-size: 2rem;
+    }
+
+    .contact-form-panel {
+        padding: 2rem 1.5rem;
+    }
+
+    .whatsapp-text {
+        display: none;
+    }
+
+    .whatsapp-btn {
+        width: 60px;
+        padding: 0;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* SECCIÓN CATÁLOGO GENERAL */
+.catalog-section {
+    padding: 6rem 0;
+    background-color: #f8faf9;
+}
+
+/* BLOQUES DE RUBROS */
+.rubro-block {
+    margin-bottom: 4rem;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eef2f0;
+}
+
+.rubro-header {
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    color: #ffffff;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rubro-header h4 {
+    font-size: 1.8rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+/* ESTILOS DEL BUSCADOR */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+    padding: 0 1rem;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 50px;
+    padding: 0.2rem 1.5rem;
+    box-shadow: 0 4px 12px rgba(27, 67, 50, 0.04);
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #1b4332;
+    box-shadow: 0 4px 20px rgba(27, 67, 50, 0.12);
+}
+
+.search-icon {
+    color: #a0aec0;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+#search-input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0.8rem 0;
+    font-size: 1.05rem;
+    font-family: inherit;
+    color: #2d3748;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 0 5px;
+    transition: color 0.2s;
+}
+
+.clear-btn:hover {
+    color: #e53e3e;
+}
+
+/* Ocultar bloques de rubro vacíos cuando se filtra */
+.rubro-block.hidden, .subcategory-title.hidden {
+    display: none !important;
+}
+/* Colores temáticos por Rubro */
+.rubro-grandes {
+    background: linear-gradient(135deg, #1b4332, #2d6a4f);
+}
+
+.rubro-pequenos {
+    background: linear-gradient(135deg, #d67d2a, #e58d3b);
+}
+
+.rubro-agro {
+    background: linear-gradient(135deg, #3f5e4d, #112a1f);
+}
+/* Nuevos degradados temáticos de Rubros */
+.rubro-alimentos {
+    background: linear-gradient(135deg, #b0621a, #d67d2a);
+}
+
+.rubro-avicola {
+    background: linear-gradient(135deg, #cc9a06, #e5ba3b);
+}
+
+/* Nuevas Imágenes Profesionales de Marcador de Posición para Productos */
+.img-alim-bovino {
+    background-image: url('https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-alim-mascota {
+    background-image: url('https://images.unsplash.com/photo-1589924691995-400dc9ebd109?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-pollitos-bb {
+    background-image: url('https://images.unsplash.com/photo-1604848698030-c434ba0861db?q=80&w=500&auto=format&fit=crop');
+}
+/* TÍTULOS DE SUBCATEGORÍAS */
+.subcategory-title {
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px dashed #e2e8f0;
+}
+
+.subcategory-title h5 {
+    font-size: 1.25rem;
+    color: #4a5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* REJILLA DE PRODUCTOS (GALLERY) */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* TARJETA DE PRODUCTO INDIVIDUAL */
+.product-item {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid #edf2f7;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(27, 67, 50, 0.08);
+    border-color: #cbd5e0;
+}
+
+/* Contenedores de Imágenes de Producto */
+.product-img {
+    height: 200px;
+    background-color: #edf2f7;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Marcadores de posición de imágenes agro profesionales de Unsplash */
+.img-vit-grandes {
+    background-image: url('https://images.unsplash.com/photo-1547496502-affa22d38842?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-vit-b12 {
+    background-image: url('https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-ant-oxitetra {
+    background-image: url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-inf-flunixin {
+    background-image: url('https://images.unsplash.com/photo-1551326844-4df70f78d0e9?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-vit-can {
+    background-image: url('https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-ant-pet {
+    background-image: url('https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-acc-pechera {
+    background-image: url('https://images.unsplash.com/photo-1541599540903-216a46cc1ad6?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-agro-herbi {
+    background-image: url('https://images.unsplash.com/photo-1592417817098-8f3d6eb19675?q=80&w=500&auto=format&fit=crop');
+}
+
+.img-insumo-aspersora {
+    background-image: url('https://images.unsplash.com/photo-1622383563227-04401ab4e5ea?q=80&w=500&auto=format&fit=crop');
+}
+
+.product-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* ETIQUETAS (BADGES) */
+.badge {
+    align-self: flex-start;
+    background: #e2e8f0;
+    color: #4a5568;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.badge-danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.badge-primary {
+    background: #0426e3;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.badge-warning {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge-info {
+    background: #e0f2fe;
+    color: #075985;
+}
+
+.badge-success {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.product-details h6 {
+    font-size: 1.15rem;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.product-details p {
+    font-size: 0.9rem;
+    color: #718096;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* BOTÓN WHATSAPP INTEGRADO POR PRODUCTO */
+.btn-product-wa {
+    background-color: #25d366;
+    color: #ffffff;
+    text-align: center;
+    padding: 0.7rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+    border-bottom: 2px solid #1eaf53;
+}
+
+.btn-product-wa:hover {
+    background-color: #1eaf53;
+}
+
+/* AJUSTES RESPONSIVOS */
+@media (max-width: 576px) {
+    .rubro-block {
+        padding: 1rem;
+    }
+
+    .rubro-header h4 {
+        font-size: 1.4rem;
+    }
+}
+/* VENTANA MODAL (FONDO OSCURO) */
+/* ==========================================
+   VENTANA MODAL MODERNA (ESTILOS ACTUALIZADOS)
+   ========================================== */
+/* VENTANA MODAL (FONDO OSCURO Y DESENFOQUE) */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    padding-top: 60px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(15, 23, 42, 0.85); /* Fondo azul oscuro/negro profundo elegante */
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+    transition: opacity 0.4s ease;
+}
+
+/* CONTENIDO DE LA IMAGEN (ANIMACIÓN FLUIDA) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 85%;
+    max-height: 75vh;
+    border-radius: 12px; 
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    animation: emersionModerna 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes emersionModerna {
+    from { 
+        transform: scale(0.85) translateY(20px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: scale(1) translateY(0); 
+        opacity: 1; 
+    }
+}
+
+/* BOTÓN DE CERRAR (CIRCULAR Y ESTILIZADO) */
+.modal-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 32px;
+    font-weight: 300; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-close:hover {
+    color: #ffffff;
+    background: rgba(220, 38, 38, 0.9); /* Rojo sutil en hover */
+    transform: rotate(90deg); 
+    border-color: transparent;
+}
+
+/* TEXTO DEL NOMBRE DEL PRODUCTO */
+#modal-caption {
+    margin: 20px auto 0 auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    animation: entradaTexto 0.5s ease forwards;
+}
+
+@keyframes entradaTexto {
+    from { 
+        transform: translateY(15px); 
+        opacity: 0; 
+    }
+    to { 
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
+/* MEJORA EN LAS IMÁGENES DEL CATÁLOGO ORIGINAL */
+.product-img {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+}
+/* Indicador de página activa en el menú */
+.nav a.active {
+    color: #f08c2f !important;
+    font-weight: 700;
+}
